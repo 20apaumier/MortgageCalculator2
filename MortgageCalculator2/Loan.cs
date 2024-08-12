@@ -84,5 +84,7 @@ namespace MortgageCalculator2
         private void GetTotalInterestPaid() { TotalInterestPaid += InterestPaidPerMonth; }
         private void GetBalanceLeftOnLoan() { BalanceLeftOnLoan = Math.Round(BalanceLeftOnLoan - PrincialPaidPerMonth, 2); }
 
+        // testing git actions to automatically update the nuget pkg upon a new push with a tag
+
     }
 }
