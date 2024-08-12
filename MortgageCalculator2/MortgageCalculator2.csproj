@@ -7,12 +7,12 @@
 		<Title>Mortgage Calculator</Title>
 		<Authors>$AJ Paumier</Authors>
 		<Description>Library to calculate the monthly payment for a mortgage</Description>
-		<RepositoryUrl>https://github.com/20apaumier/MortgageCalculator</RepositoryUrl>
+		<RepositoryUrl>https://github.com/20apaumier/MortgageCalculator2</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageTags>Mortgage Calculator</PackageTags>
 		<PackageId>AJ.MortgageCalculator</PackageId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>1.0.2</Version>
+		<Version>1.0.53</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
