@@ -1,0 +1,66 @@
+﻿@using Components.HelperClasses
+
+@page "/myLoans"
+@rendermode InteractiveServer
+
+<h3>MyLoans</h3>
+
+<EditForm Model="this" OnValidSubmit="HandleValidSubmit">
+    <button type="submit" class="btn btn-primary" stle="padding-top: 20px; padding-bottom: 20px">Increment Month</button>
+</EditForm>
+
+
+@if (loans == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Current Month</th>
+                <th>MonthlyPayment</th>
+                <th>PrincialPaidPerMonth</th>
+                <th>InterestPaidPerMonth</th>
+                <th>TotalInterestPaid</th>
+                <th>BalanceLeftOnLoan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loan in loans)
+            {
+                <tr>
+                    <td>@loan.CurrentMonth</td>
+                    <td>@loan.MonthlyPayment.ToString("C")</td>
+                    <td>@loan.PrincialPaidPerMonth.ToString("C")</td>
+                    <td>@loan.InterestPaidPerMonth.ToString("C")</td>
+                    <td>@loan.TotalInterestPaid.ToString("C")</td>
+                    <td>@loan.BalanceLeftOnLoan.ToString("C")</td>
+                    @*
+            Still needs implemented
+            <EditForm Model="this" OnValidSubmit="DeleteLoan(loan)">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            </EditForm> *@
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Loan> loans = Bank.GetLoans();
+
+    private void HandleValidSubmit()
+    {
+        Bank.IncrementMonth();
+    }
+
+    private void DeleteLoan(Loan loanToBeDeleted)
+    {
+        // still needs to be worked on, getting index out of range when deleting
+        // need to figure out typically way to delete a row in Blazor
+        Bank.DeleteLoan(loanToBeDeleted);
+        loans = Bank.GetLoans();
+    }
+}

@@ -1,0 +1,53 @@
+﻿﻿@using Microsoft.AspNetCore.Components.Forms
+@using Components.HelperClasses
+
+@page "/"
+@rendermode InteractiveServer
+
+<h3>Mortgage Calculator</h3>
+
+<EditForm Model="this" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div style="padding: 10px;">
+        <label for="loanAmount">Loan Amount:</label>
+        <InputNumber id="loanAmount" @bind-Value="loanAmount" />
+    </div>
+
+    <div style="padding: 10px;">
+        <label for="loanLength">Loan Length (in years):</label>
+        <InputNumber id="loanLength" @bind-Value="loanLength" />
+    </div>
+
+    <div style="padding: 10px;">
+        <label for="interestRate">Yearly Interest Rate (%):</label>
+        <InputNumber id="interestRate" @bind-Value="interestRate" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</EditForm>
+
+@if (monthlyPayment != 0)
+{
+    <h6 style="padding-top: 20px; font-weight: bold;">Monthly Payment: @monthlyPayment</h6>
+}
+
+
+@code {
+    public double loanAmount { get; set; }
+    public int loanLength { get; set; }
+    public double interestRate { get; set; }
+    private double monthlyPayment { get; set; }
+
+    void HandleValidSubmit()
+    {
+        // create new loan object
+        Loan userLoan = new Loan(loanAmount, loanLength, interestRate);
+
+        // Calculate the monthly payment
+        monthlyPayment = userLoan.MonthlyPayment;
+
+        // add loan to the bank
+        Bank.AddLoan(userLoan);
+    }
+}
