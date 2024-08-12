@@ -20,8 +20,8 @@ jobs:
     - name: Test
       run: dotnet test MortgageCalculator2/MortgageCalculator2.csproj --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
-      run: dotnet pack MortgageCalculator2/MortgageCalculator2.csproj --configuration Release /p:Version=${VERSION} --no-build --output . -p:PackageID=AJ.MortgageCalculator
+      run: dotnet pack MortgageCalculator2/MortgageCalculator2.csproj --configuration Release /p:Version=${VERSION} --no-build --output . -p:PackageID=AJ.MortgageCalculator2
     - name: Push
-      run: dotnet nuget push AJ.MortgageCalculator.${VERSION}.nupkg --source https://nuget.pkg.github.com/aj/index.json --api-key ${GITHUB_TOKEN}
+      run: dotnet nuget push AJ.MortgageCalculator2.${VERSION}.nupkg --source https://nuget.pkg.github.com/aj/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONPAT }}
