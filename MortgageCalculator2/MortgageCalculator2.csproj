@@ -1,9 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>Mortgage Calculator</Title>
+		<Authors>$AJ Paumier</Authors>
+		<Description>Library to calculate the monthly payment for a mortgage</Description>
+		<RepositoryUrl>https://github.com/20apaumier/MortgageCalculator</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageTags>Mortgage Calculator</PackageTags>
+		<PackageId>AJ.MortgageCalculator</PackageId>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Version>1.0.2</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
