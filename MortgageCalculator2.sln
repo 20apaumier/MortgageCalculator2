@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortgageCalculator2Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortgageCalculatorBlazorApp", "MortgageCalculatorBlazorApp\MortgageCalculatorBlazorApp.csproj", "{FC473767-71CA-4B03-8438-ED91499CA1DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortgageCalculatorConsoleApp", "MortgageCalculatorConsoleApp\MortgageCalculatorConsoleApp.csproj", "{956BD301-1267-45F1-BE0A-6873C1233FBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FC473767-71CA-4B03-8438-ED91499CA1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC473767-71CA-4B03-8438-ED91499CA1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC473767-71CA-4B03-8438-ED91499CA1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956BD301-1267-45F1-BE0A-6873C1233FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956BD301-1267-45F1-BE0A-6873C1233FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956BD301-1267-45F1-BE0A-6873C1233FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956BD301-1267-45F1-BE0A-6873C1233FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
